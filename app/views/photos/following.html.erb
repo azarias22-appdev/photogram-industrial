@@ -1,0 +1,9 @@
+<h1>Following </h1>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <% current_user.leaders.each do |follower| %>
+      <ul> <%= follower.username %> is following <%= current_user.username %> </ul>
+    <% end %>
+  </div>
+</div>

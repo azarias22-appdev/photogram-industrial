@@ -1,0 +1,9 @@
+Feed Of Comments
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <% current_user.comments.each do |comment| %>
+      <li><%= comment.body %></li>
+    <% end %>
+  </div>
+</div>

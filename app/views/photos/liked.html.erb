@@ -1,0 +1,21 @@
+<h1>
+  <%= @user.username %>
+</h1>
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<nav class="nav nav-pills nav-fill">
+<li>
+  <%= link_to "Posts", user_path(@user.username), class: "nav-link" %>
+</li>
+<li>
+  <%= link_to "Liked Photos", liked_photos_path(@user.username), class: "nav-link" %>
+</li>
+  <a class="nav-link" href="#">Feed</a>
+  <a class="nav-link disabled">Following</a>
+</nav>
+</div>
+</div>
+
+<% current_user.liked_photos.each do |photo| %>
+  <%= render "photos/photo", photo: photo %>
+<% end %>
